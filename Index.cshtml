@@ -1,0 +1,48 @@
+﻿@model IEnumerable<TestASS2.Models.coutbl>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Course List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" border="1">
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.course_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.course_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tutor_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tutor_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.course_id)
+    </td>
+    <td>
+        @Html.ActionLink(item.course_name, "studentinfo", new { id = item.course_id })
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tutor_id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tutor_name)
+    </td>
+
+</tr>
+}
+
+</table>

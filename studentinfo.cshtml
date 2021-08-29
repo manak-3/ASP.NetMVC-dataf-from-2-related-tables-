@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TestASS2.Models.Stutable>
+
+@{
+    ViewBag.Title = "studentinfo";
+}
+
+<h2>Student Enrolled in Selected Course  </h2>
+
+<table class="table" border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.standard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.coutbl.course_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.standard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.coutbl.course_name)
+        </td>
+    </tr>
+}
+
+</table>
